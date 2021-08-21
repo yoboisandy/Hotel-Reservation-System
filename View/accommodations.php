@@ -19,125 +19,42 @@ include 'header.php';
 
         <div class="row my-5">
             <?php
-$rooms = view_rooms();
-if($rooms)
-{
-    while($row = $rooms->fetch_assoc()){
-        echo "
+            $rooms = view_rooms();
+            if ($rooms) {
+                while ($row = $rooms->fetch_assoc()) {
+                    echo "
         <div class='col-lg-6 col-12 d-flex justify-content-center my-4'>"
-                ."<a href='#' class='custom-card'>"
-                    ."<div class='card' style='width: 28rem;'>"
-                        ."<img src='Admin-Zone/"
-                        .$row['image']."' class='card-img-top' style='width: 100%; height:20rem;'
+                        . "<a href='#' class='custom-card'>"
+                        . "<div class='card' style='width: 28rem;'>"
+                        . "<img src='Admin-Zone/"
+                        . $row['image'] . "' class='card-img-top' style='width: 100%; height:20rem;'
                             alt='...'>"
-                        ."<div class='card-body mt-4 mb-3 text-center'>"
-                            ."<h3 class='card-title'>".$row['name']."</h3>
+                        . "<div class='card-body mt-4 mb-3 text-center'>"
+                        . "<h3 class='card-title'>" . $row['name'] . "</h3>
                             <p class='card-text'>"
-                                ."<i class='fas fa-bed'></i> &nbsp; "
-                                .$row['beds']."
+                        . "<i class='fas fa-bed'></i> &nbsp; "
+                        . $row['beds'] . "
                                 &nbsp; &nbsp; <i class='fas fa-toilet'></i>
                                 &nbsp; "
-                                .$row['washroom']."&nbsp;&nbsp;
+                        . $row['washroom'] . "&nbsp;&nbsp;
                                 <i class='fas fa-users'></i> &nbsp;"
-                                .$row['people']."
+                        . $row['people'] . "
                             </p>
                             <p class='price card-text letter-spacing-1 text-uppercase'>"
-                                .$row['price']."
+                        . $row['price'] . "
                             </p>
                             <p class='mt-4'>
-                                <a class='btn-book-now' href='". $base_url . "?r=booking-form'>Book Now</a>
+                                <a class='btn-book-now' href='" . $base_url . "?r=booking-form&id=" . $row['id'] . "'>Book Now</a>
             </p>
         </div>
         </div>
         </a>
         </div>
         ";
-        }
-        }
-        ?>
+                }
+            }
+            ?>
         </div>
-
-
-        <!-- <div class="col-lg-6 col-12 d-flex justify-content-center my-4">
-                <a href="#" class="custom-card">
-                    <div class="card" style="width: 28rem;">
-                        <img src="images\accommodation\d3r.jpg" class="card-img-top" style="width: 28rem; height:20rem;"
-                            alt="...">
-                        <div class="card-body mt-4 mb-3 text-center">
-                            <h3 class="card-title">Deluxe Triple Bed Room</h3>
-                            <p class="card-text">
-                                <i class="fas fa-bed"></i> &nbsp; 3 single bed
-                                &nbsp;&nbsp; <i class="fas fa-toilet"></i>
-                                &nbsp; 1 washroom &nbsp;&nbsp;
-                                <i class="fas fa-users"></i> &nbsp; 3 adults
-                            </p>
-                            <p class="price card-text letter-spacing-1 text-uppercase">
-                                Rs. 1800 / Per Night
-                            </p>
-                            <p class="mt-4">
-                                <a class="btn-book-now" href="<?php echo $base_url ?>?r=booking-form">Book Now</a>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
-
-        <div class="row my-5">
-            <div class="col-lg-6 col-12 d-flex justify-content-center my-4">
-                <a href="#" class="custom-card">
-                    <div class="card" style="width: 28rem;">
-                        <img src="images\accommodation\ddbr.jpg" style="width: 28rem; height:20rem;"
-                            class="card-img-top" alt="...">
-                        <div class="card-body mt-4 mb-3 text-center">
-                            <h3 class="card-title">Deluxe Double Bed Room</h3>
-                            <p class="card-text">
-                                <i class="fas fa-bed"></i> &nbsp; 1 king size bed
-                                &nbsp;&nbsp; <i class="fas fa-toilet"></i>
-                                &nbsp; 1 washroom &nbsp;&nbsp;
-                                <i class="fas fa-users"></i> &nbsp; 2 adults, 1 child
-                            </p>
-                            <p class="price card-text letter-spacing-1 text-uppercase">
-                                Rs. 2400 / Per Night
-                            </p>
-                            <p class="mt-4">
-                                <a class="btn-book-now" href="<?php echo $base_url ?>?r=booking-form">Book Now</a>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-6 col-12 d-flex justify-content-center my-4">
-                <a href="#" class="custom-card">
-                    <div class="card" style="width: 28rem;">
-                        <img src="images\accommodation\dfr.jpg" class="card-img-top" style="width: 28rem; height:20rem;"
-                            alt="...">
-                        <div class="card-body mt-4 mb-3 text-center">
-                            <h3 class="card-title">Deluxe Family Room</h3>
-                            <p class="card-text">
-                                <i class="fas fa-bed"></i> &nbsp; 1 king size bed, 1 single bed
-                                &nbsp;&nbsp; <i class="fas fa-toilet"></i>
-                                &nbsp; 1 washroom &nbsp;&nbsp;
-                                <i class="fas fa-users"></i> &nbsp; 3 adults, 1 child
-                            </p>
-                            <p class="price card-text letter-spacing-1 text-uppercase">
-                                Rs. 3000 / Per Night
-                            </p>
-                            <p class="mt-4">
-                                <a class="btn-book-now" href="<?php echo $base_url ?>?r=booking-form">Book Now</a>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div>
- -->
-
-
-
-
     </section>
 
 
@@ -149,35 +66,37 @@ if($rooms)
         </div>
         <div class="row my-5">
             <?php
-        $suites = view_suites();
-        if($suites){
-        while($row = $suites->fetch_assoc()){
-        echo "<div class='col-lg-6 col-12 d-flex justify-content-center my-4'>
+            $suites = view_suites();
+            if ($suites) {
+                while ($row = $suites->fetch_assoc()) {
+                    echo "<div class='col-lg-6 col-12 d-flex justify-content-center my-4'>
                 <a href='#' class='custom-card'>
                     <div class='card' style='width: 28rem;'>
-                        <img src='Admin-Zone/".$row['image']."' style='width: 100%; height:20rem;'
+                        <img src='Admin-Zone/" . $row['image'] . "' style='width: 100%; height:20rem;'
                             class='card-img-top' alt='...'>
                         <div class='card-body mt-4 mb-3 text-center'>
-                            <h3 class='card-title'>".$row['name']."</h3>
+                            <h3 class='card-title'>" . $row['name'] . "</h3>
                             <p class='card-text'>
-                                <i class='fas fa-bed'></i> &nbsp;".$row['bed']."
-                                &nbsp;&nbsp; <i class='fas fa-sink'></i>".$row['kitchen']."  &nbsp;&nbsp;
+                                <i class='fas fa-bed'></i> &nbsp;" . $row['bed'] . "
+                                &nbsp;&nbsp; <i class='fas fa-sink'></i>" . $row['kitchen'] . "  &nbsp;&nbsp;
                             </p>
                             <p class='card-text'>
-                                <i class='fas fa-tv'></i> &nbsp;".$row['living_room']. "&nbsp;&nbsp; <i class='fas fa-toilet'></i>
-                                &nbsp;".$row['washroom']." &nbsp;&nbsp;<i class='fas fa-users'></i>
-                                &nbsp;".$row['people']."
+                                <i class='fas fa-tv'></i> &nbsp;" . $row['living_room'] . "&nbsp;&nbsp; <i class='fas fa-toilet'></i>
+                                &nbsp;" . $row['washroom'] . " &nbsp;&nbsp;<i class='fas fa-users'></i>
+                                &nbsp;" . $row['people'] . "
                             </p>
                             <p class=' price card-text letter-spacing-1 text-uppercase'>"
-                                .$row['price']."
+                        . $row['price'] . "
                             </p>
                             <p class='mt-4'>
-                                <a class='btn-book-now' href='<?php echo $base_url ?>?r=booking-form'>Book Now</a>
+                                <a class='btn-book-now' href='<?php echo $base_url ?>?r=booking-form&id=" . $row['id'] . "'>Book Now</a>
             </p>
         </div>
         </div>
         </a>
-        </div>";}} ?>
+        </div>";
+                }
+            } ?>
         </div>
     </section>
 

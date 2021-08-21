@@ -2,9 +2,8 @@
 include "model/DbModel.php";
 
 if(empty($_POST)){
-      include 'view/login.php';
+    include 'view/login.php';
     return;
-   
 }
 try{
     if(empty($_POST['txtEmail']) || empty($_POST['txtPassword'])){
@@ -43,5 +42,3 @@ try{
 }catch (Exception $ex) {
     include 'Controller/ErrorController.php';
 }
-
-?>
