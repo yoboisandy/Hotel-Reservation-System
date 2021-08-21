@@ -24,11 +24,11 @@ include 'header.php';
                 while ($row = $rooms->fetch_assoc()) {
                     echo "
         <div class='col-lg-6 col-12 d-flex justify-content-center my-4'>"
-                        . "<a href='#' class='custom-card'>"
                         . "<div class='card' style='width: 28rem;'>"
                         . "<img src='Admin-Zone/"
                         . $row['image'] . "' class='card-img-top' style='width: 100%; height:20rem;'
                             alt='...'>"
+                        . "<div style='position:static;'><p style='position:absolute;top:8px;right:8px;background-color:#deac46;border-radius:10px;color:white;padding:3px 6px;'> Available " . $row['quantity'] . " / " . $row['quantity'] . "</p></div>"
                         . "<div class='card-body mt-4 mb-3 text-center'>"
                         . "<h3 class='card-title'>" . $row['name'] . "</h3>
                             <p class='card-text'>"
@@ -48,7 +48,7 @@ include 'header.php';
             </p>
         </div>
         </div>
-        </a>
+        
         </div>
         ";
                 }

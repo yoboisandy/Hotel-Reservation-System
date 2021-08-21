@@ -13,50 +13,49 @@
                     <div class="input-group  my-4">
                         <label class="offset-lg-1 col-lg-3 col-5" for="Room Name">Room Name</label>
                         <div class="col-lg-8 col-7">
-                            <input name="txtRoomName" type="text" style="border-color:#d76149;" class="form-control"
-                                placeholder="Room Name..." aria-label="name" aria-describedby="basic-addon1">
+                            <input name="txtRoomName" type="text" style="border-color:#d76149;" class="form-control" placeholder="Room Name..." aria-label="name" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
                     <div class="input-group  my-4">
                         <label class="offset-lg-1 col-lg-3 col-5" for="fileToUpload">Room Image</label>
                         <div class="col-lg-8 col-7">
-                            <input name="fileToUpload" id="fileToUpload" type="file" style="border-color:#d76149;"
-                                class="form-control" placeholder="Room Pic..." aria-label="name"
-                                aria-describedby="basic-addon1">
+                            <input name="fileToUpload" id="fileToUpload" type="file" style="border-color:#d76149;" class="form-control" placeholder="Room Pic..." aria-label="name" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
                     <div class="input-group  my-4">
                         <label class="offset-lg-1 col-lg-3 col-5" for="Beds">Beds</label>
                         <div class="col-lg-8 col-7">
-                            <input name="txtBed" type="text" style="border-color:#d76149;" class="form-control"
-                                placeholder="Beds..." aria-label="name" aria-describedby="basic-addon1">
+                            <input name="txtBed" type="text" style="border-color:#d76149;" class="form-control" placeholder="Beds..." aria-label="name" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
                     <div class="input-group  my-4">
                         <label class="offset-lg-1 col-lg-3 col-5" for="Washroom">Washroom</label>
                         <div class="col-lg-8  col-7">
-                            <input name="txtWashroom" type="text" style="border-color:#d76149;" class="form-control"
-                                placeholder="Washrooms..." aria-label="email" aria-describedby="basic-addon1">
+                            <input name="txtWashroom" type="text" style="border-color:#d76149;" class="form-control" placeholder="Washrooms..." aria-label="email" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
                     <div class="input-group  my-4">
                         <label class="offset-lg-1 col-lg-3 col-5" for="People">People</label>
                         <div class="col-lg-8  col-7">
-                            <input name="txtPeople" type="text" style="border-color:#d76149;" class="form-control"
-                                placeholder="No. of adults and kids..." aria-label="email"
-                                aria-describedby="basic-addon1">
+                            <input name="txtPeople" type="text" style="border-color:#d76149;" class="form-control" placeholder="No. of adults and kids..." aria-label="email" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+
+                    <div class="input-group  my-4">
+                        <label class="offset-lg-1 col-lg-3 col-5" for="Quantity">Quantity</label>
+                        <div class="col-lg-8  col-7">
+                            <input name="txtQuantity" type="number" style="border-color:#d76149;" class="form-control" placeholder="No. of rooms..." aria-label="email" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
                     <div class="input-group mb-3">
                         <label class="offset-lg-1 col-lg-3 col-5" for="price">Price</label>
                         <div class="col-lg-8 col-7">
-                            <input name="txtPrice" type="text" style="border-color:#d76149;" class="form-control"
-                                placeholder="Price Per Night..." aria-label="address" aria-describedby="basic-addon1">
+                            <input name="txtPrice" type="text" style="border-color:#d76149;" class="form-control" placeholder="Price Per Night..." aria-label="address" aria-describedby="basic-addon1">
                         </div>
                     </div>
 
