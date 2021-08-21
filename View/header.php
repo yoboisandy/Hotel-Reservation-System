@@ -19,43 +19,36 @@
         <!-- Header start -->
         <nav class="navbar shadow sticky navbar-expand-lg navbar-light bg-colour">
             <div class="container">
-                <a class="navbar-brand " href="<?php echo $base_url ?>?r=home"><img width="80" height="50"
-                        src="images\logo1.PNG" /><br />Rise-n-Shine</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand " href="<?php echo $base_url ?>?r=home"><img width="80" height="50" src="images\logo1.PNG" /><br />Rise-n-Shine</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     <span>Menu</span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'home' ? 'active' : '' ?>"
-                                aria-current="page" href="<?php echo $base_url ?>?r=home">Home</a>
+                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'home' ? 'active' : '' ?>" aria-current="page" href="<?php echo $base_url ?>?r=home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'accommodations' ? 'active' : '' ?>"
-                                href="<?php echo $base_url ?>?r=accommodations">Accommodations</a>
+                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'accommodations' ? 'active' : '' ?>" href="<?php echo $base_url ?>?r=accommodations">Accommodations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'about' ? 'active' : '' ?>"
-                                href="<?php echo $base_url ?>?r=about">About</a>
+                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'about' ? 'active' : '' ?>" href="<?php echo $base_url ?>?r=about">About</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'contact' ? 'active' : '' ?>"
-                                href="<?php echo $base_url ?>?r=contact">Contact</a>
+                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'contact' ? 'active' : '' ?>" href="<?php echo $base_url ?>?r=contact">Contact</a>
                         </li>
-
+                        <!-- 
                         <?php
-                        if(!empty($_SESSION['user']['login'])){ ?>
+                        if (!empty($_SESSION['user']['login'])) { ?>
                         <li class="nav-item">
                             <a class="nav-link <?php echo $_SESSION['active_url'] == 'userprofile' ? 'active' : '' ?>"
-                                href="<?= $base_url ?>?r=userprofile&id=<?php echo $_SESSION['user']['user_id']?>">
+                                href="<?= $base_url ?>?r=userprofile&id=<?php echo $_SESSION['user']['user_id'] ?>">
                                 <?php echo $_SESSION['user']['user_name'] ?></a>
                         </li>
                         <?php
-                        if(($_SESSION['user']['type'])==1){?>
+                            if (($_SESSION['user']['type']) == 1) { ?>
                         <li class="nav-item">
                             <a class="nav-link " href="<?php echo $base_url ?>/Admin-Zone">
                                 Admin Panel</a>
@@ -63,13 +56,41 @@
                         <?php } ?>
                         <li class="nav-item"><a href="<?= $base_url ?>?r=logout" id="custom" class="custom">Logout</a>
                         </li>
-                        <?php  }else{
+                        <?php  } else {
                         ?>
                         <li class="nav-item">
                             <a class="custom <?php echo $_SESSION['active_url'] == 'login' ? 'active' : '' ?>"
                                 id="custom" href="<?php echo $base_url ?>?r=login">Login/Register</a>
                             <?php } ?>
-                        </li>
+                        </li> -->
+                        <?php
+                        if (!empty($_SESSION['user']['login'])) {
+                        ?>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link <?php echo $_SESSION['active_url'] == 'userprofile' ? 'active' : '' ?>  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <?= $_SESSION['user']['user_name']; ?>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=userprofile&id=<?php echo $_SESSION['user']['user_id'] ?>">Profile</a></li>
+                                    <?php
+                                    if ($_SESSION['user']['type'] == 1) {
+                                    ?>
+                                        <li><a class="dropdown-item nav-link" href="<?php echo $base_url ?>/Admin-Zone">Admin Panel</a></li>
+                                    <?php } else { ?>
+                                        <li><a class="dropdown-item nav-link" href="#">Bookings</a></li>
+                                    <?php } ?>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=logout">Log out</a></li>
+                                </ul>
+                            </li>
+                        <?php  } else {
+                        ?>
+                            <li class="nav-item">
+                                <a class="custom <?php echo $_SESSION['active_url'] == 'login' ? 'active' : '' ?>" id="custom" href="<?php echo $base_url ?>?r=login">Login/Register</a>
+                            <?php } ?>
+                            </li>
                     </ul>
                 </div>
             </div>

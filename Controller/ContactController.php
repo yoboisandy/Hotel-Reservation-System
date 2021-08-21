@@ -8,7 +8,7 @@ if (empty($_POST)) {
 try {
     if (empty($_POST['name']) ||  empty($_POST['email']) || empty($_POST['phone']) ||  empty($_POST['message'])) {
 
-        $error['body'] = '';
+        $error['body'] = 'All Fields should be filled';
         $error['title'] = 'Info!!!';
         $error['type'] = 'info';
         setFlash('message', $error);

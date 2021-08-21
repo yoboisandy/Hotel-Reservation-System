@@ -15,30 +15,35 @@ include 'header.php';
             <h1 class="display-4">Get in Touch</h1>
             <hr class="w-50 mx-auto">
         </div>
+
         <div class="row contact-area">
 
+            <div class="row d-flex justify-content-center mt-3">
+                <div class="col-9"><?php include "View/flash.php"; ?></div>
+            </div>
             <div class="col-lg-8 col-md-12 contact-form">
                 <div class="row d-flex justify-content-center mx-auto  p-5">
+
                     <form action="<?= $base_url ?>?r=contact" method="post">
                         <div class=" col-12">
                             <label for="inputName">Name</label><span>&nbsp;*</span>
                             <input type="text" placeholder="Your Name..." <?php
                                                                             if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['user_name'];
-                                                                                                                            } ?>" class="form-control my-2" id="inputName" name="name" required>
+                                                                                                                                ?>" readonly <?php } ?> class="form-control my-2" id="inputName" name="name" required>
                             <div id="name_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
                             <label for="inputEmail">Email</label><span>&nbsp;*</span>
                             <input type="email" placeholder="someone@example.com" <?php
                                                                                     if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['email'];
-                                                                                                                                    } ?>" class="form-control my-2" id="inputEmail" name="email" required>
+                                                                                                                                        ?>" readonly <?php } ?> class="form-control my-2" id="inputEmail" name="email" required>
                             <div id="email_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
                             <label for="inputPhone">Phone</label><span>&nbsp;*</span>
                             <input type="text" placeholder="Your Number..." <?php
                                                                             if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['phone'];
-                                                                                                                            } ?>" class="form-control my-2" id="inputPhone" name="phone" required>
+                                                                                                                                ?>" readonly <?php } ?> class="form-control my-2" id="inputPhone" name="phone" required>
                             <div id="phone_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
@@ -54,8 +59,8 @@ include 'header.php';
             </div>
 
 
-            <div class="col-lg-4 col-md-12">
-                <div class="row d-flex justify-content-center mx-auto  p-5">
+            <div class="col-lg-4 col-md-12 p-5">
+                <div class="row d-flex justify-content-center mx-auto ">
                     <div class="contact-info mt-3">
                         <span class="contact-info__icon mx-3"><i class="fas fa-2x fa-home"></i></span>
                         <div class="contact-info-body">
