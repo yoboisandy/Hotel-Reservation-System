@@ -1,5 +1,5 @@
 <?php
-  include'header.php';
+include 'header.php';
 ?>
 <section style="margin-top: 100px;">
 
@@ -22,36 +22,32 @@
                     <form action="<?= $base_url ?>?r=contact" method="post">
                         <div class=" col-12">
                             <label for="inputName">Name</label><span>&nbsp;*</span>
-                            <input type="text" placeholder="Your Name..." class="form-control my-2" id="inputName"
-                                name="name" required>
+                            <input type="text" placeholder="Your Name..." <?php
+                                                                            if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['user_name'];
+                                                                                                                            } ?>" class="form-control my-2" id="inputName" name="name" required>
                             <div id="name_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
                             <label for="inputEmail">Email</label><span>&nbsp;*</span>
-                            <input type="email" placeholder="someone@example.com" class="form-control my-2"
-                                id="inputEmail" name="email" required>
+                            <input type="email" placeholder="someone@example.com" <?php
+                                                                                    if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['email'];
+                                                                                                                                    } ?>" class="form-control my-2" id="inputEmail" name="email" required>
                             <div id="email_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
                             <label for="inputPhone">Phone</label><span>&nbsp;*</span>
-                            <input type="text" placeholder="Your Number..." class="form-control my-2" id="inputPhone"
-                                name="phone" required>
+                            <input type="text" placeholder="Your Number..." <?php
+                                                                            if (!empty($_SESSION['user']['login'])) { ?> value="<?= $_SESSION['user']['phone'];
+                                                                                                                            } ?>" class="form-control my-2" id="inputPhone" name="phone" required>
                             <div id="phone_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
                             <label for="inputMessage">Message</label><span>&nbsp;*</span>
-                            <textarea class="form-control my-2" placeholder="Message..." id="inputMessage" rows="3"
-                                name="message"></textarea>
+                            <textarea class="form-control my-2" placeholder="Message..." id="inputMessage" rows="3" name="message"></textarea>
                             <div id="message_error" class="val_error"></div>
                         </div>
                         <div class=" col-12">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                <label class="form-check-label" for="inlineCheckbox1">&nbsp;&nbsp;Send me offers &
-                                    updates</label>
-                            </div>
-                            <div class=" pt-4"> <button type="submit" class="form-button btn btn-block btn-lg"
-                                    value="Register" name="register">SEND MESSAGE</button> </div>
+                            <div class=" pt-4"> <button type="submit" class="form-button btn btn-block btn-lg" value="Register" name="register">SEND MESSAGE</button> </div>
                         </div>
                     </form>
                 </div>
@@ -95,15 +91,12 @@
 
         <!-- Google Map Starts -->
         <section class="mt-5 mb-0">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28119.421372176363!2d84.16088583128287!3d27.560512141188337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2432d71cbec82735!2sGolaghat%20Wildlife%20Resort!5e1!3m2!1sen!2snp!4v1613490458055!5m2!1sen!2snp"
-                width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-                tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28119.421372176363!2d84.16088583128287!3d27.560512141188337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2432d71cbec82735!2sGolaghat%20Wildlife%20Resort!5e1!3m2!1sen!2snp!4v1613490458055!5m2!1sen!2snp" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </section>
         <!-- Google Map Ends -->
     </section>
 </section>
 
 <?php
-  include'footer.php';
+include 'footer.php';
 ?>
