@@ -31,13 +31,6 @@ include 'header.php';
                                         }
                                     }
                                     ?>
-                                    <!-- <option>Deluxe Twin Bed Room</option>
-                                    <option>Deluxe Triple Bed Room</option>
-                                    <option value="fiat">Deluxe Double Bed Room</option>
-                                    <option>Deluxe Family Room</option>
-                                    <hr class="dropdown-divider">
-                                    <option>Mini House</option>
-                                    <option>Cottage Villa</option> -->
                                 </select>
                             </div>
                         </div>

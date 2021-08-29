@@ -85,6 +85,15 @@ function countItem($table)
     return $stmt->fetchColumn();
 }
 
+function totalRooms()
+{
+    $pdo = pdo();
+    $stmt = $pdo->query("SELECT SUM(quantity) FROM rooms");
+    $stmt->execute();
+
+    return $stmt->fetchColumn();
+}
+
 function checkItem($table)
 {
     return countItem($table) > 0;

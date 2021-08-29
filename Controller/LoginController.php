@@ -17,7 +17,7 @@ try {
     }
 
     $email = filterText($_POST['txtEmail']);
-    $password = filterText($_POST['txtPassword']);
+    $password = md5(filterText($_POST['txtPassword']));
     $user = db_login($email, $password);
 
     if ($user) {

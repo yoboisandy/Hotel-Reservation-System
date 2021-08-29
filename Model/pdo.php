@@ -47,7 +47,7 @@ function where($table, $key, $operator, $value = null, $all_data = false)
         $value = $operator;
         $operator = "=";
     }
-   
+
     // Check If Compare is Valid
 
     $query = "SELECT * FROM $table WHERE $key $operator ?";
@@ -85,51 +85,69 @@ function countItem($table)
     return $stmt->fetchColumn();
 }
 
+function minPrice($table)
+{
+    $pdo = pdo();
+    $stmt = $pdo->query("SELECT MIN(price) FROM $table");
+    $stmt->execute();
+
+    return $stmt->fetchColumn();
+}
+
+function totalRooms()
+{
+    $pdo = pdo();
+    $stmt = $pdo->query("SELECT SUM(quantity) FROM rooms");
+    $stmt->execute();
+
+    return $stmt->fetchColumn();
+}
+
 function checkItem($table)
 {
     return countItem($table) > 0;
 }
 
 
-function create($table, $params)
-{
-    // First Serialize Key and Value
-    $keys = array_keys($params);
-    $values = array_values($params);
+// function create($table, $params)
+// {
+//     // First Serialize Key and Value
+//     $keys = array_keys($params);
+//     $values = array_values($params);
 
-    // Start the Query
-    $query = "INSERT INTO $table (";
-    $total_keys = count($keys);
+//     // Start the Query
+//     $query = "INSERT INTO $table (";
+//     $total_keys = count($keys);
 
-    $index = 1;
-    foreach ($keys as $key) {
-        $query .= $key;
-        if ($total_keys != $index)
-            $query .= ", ";
-        $index++;
-    }
+//     $index = 1;
+//     foreach ($keys as $key) {
+//         $query .= $key;
+//         if ($total_keys != $index)
+//             $query .= ", ";
+//         $index++;
+//     }
 
-    $query .= ") VALUES(";
+//     $query .= ") VALUES(";
 
-    $total_values = count($values);
-    $index = 1;
-    foreach ($values as $value) {
-        $query .= "?";
-        if ($total_values != $index)
-            $query .= ", ";
-        $index++;
-    }
+//     $total_values = count($values);
+//     $index = 1;
+//     foreach ($values as $value) {
+//         $query .= "?";
+//         if ($total_values != $index)
+//             $query .= ", ";
+//         $index++;
+//     }
 
-    $query .= ")";
+//     $query .= ")";
 
-    try {
-        $pdo = pdo();
-        $stmt = $pdo->prepare($query);
-        $stmt->execute($values);
-    } catch (\Exception $e) {
-        die("Error Occured: " . $e->getMessage());
-    }
-}
+//     try {
+//         $pdo = pdo();
+//         $stmt = $pdo->prepare($query);
+//         $stmt->execute($values);
+//     } catch (\Exception $e) {
+//         die("Error Occured: " . $e->getMessage());
+//     }
+// }
 
 function update($table, $column, $id, $params)
 {

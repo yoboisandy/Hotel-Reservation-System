@@ -14,8 +14,7 @@
                             <h2 class="font-weight-bold mt-5"><?= $user_data['u_fname'] ?>
                                 <?= $user_data['u_lname'] ?></h2>
                             <p><?= $user_data['u_address'] ?></p>
-                            <a href="<?= $base_url ?>?r=edituser&id=<?php echo $id ?>" class="text-white "><i
-                                    class="far fa-edit fa-2x mb-5"></i></a>
+                            <a href="<?= $base_url ?>?r=editUser&id=<?php echo $id ?>" class="text-white "><i class="far fa-edit fa-2x mb-5"></i></a>
                         </div>
                     </div>
                     <div class="col bg-white rounded-right" style="border: 1px solid #deac46">

@@ -13,7 +13,7 @@ if ($_SESSION['user']['type'] != 1) {
     <link rel="stylesheet" href="resource/custom_styles/style.css" type="text/css" />
     <link rel="stylesheet" href="resource\bootstrap\css\bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="resource\font awesome\css\all.min.css" type="text/css" />
-    <title>Document</title>
+    <title>Rise-n-Shine | Admin-Panel</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 

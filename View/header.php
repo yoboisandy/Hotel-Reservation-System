@@ -77,7 +77,7 @@
                                     ?>
                                         <li><a class="dropdown-item nav-link" href="<?php echo $base_url ?>/Admin-Zone">Admin Panel</a></li>
                                     <?php } else { ?>
-                                        <li><a class="dropdown-item nav-link" href="#">Bookings</a></li>
+                                        <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=booking">Bookings</a></li>
                                     <?php } ?>
                                     <li>
                                         <hr class="dropdown-divider">

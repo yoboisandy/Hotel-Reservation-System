@@ -7,11 +7,35 @@ include 'header.php';
             <p>Rise-n-Shine Resort & Spa</p>
             <h1>Our Rooms & Suites</h1>
         </div>
+
     </section>
 
+    <div class="row d-flex justify-content-center mt-4" style="position: static;">
+        <div class="col-10" style="border: 2px solid #deac46;border-radius:10px;position:absolute;top:440px;background-color:white;">
+            <form action="" method="post" class="d-flex flex-column">
+                <div class="input-group  my-4">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <div class="mx-3">Check In</div>
+                                <input name="txtRooms" type="date" style="border-color:#deac46;width:100%" class="form-control mx-3" placeholder="No. of Rooms....">
+                            </td>
+                            <td>
+                                <div class="mx-3">Check Out</div>
+                                <input name="txtRooms" type="date" style="border-color:#deac46;width:100%" class="form-control mx-3" placeholder="No. of Rooms....">
+                            </td>
+                            <td>
+                                <div class="mx-4"><button class="w-100 mt-3" style="border:2px solid #deac46;border-radius:10px;background-color:white;color:#deac46;" type="submit">Check</button></div>
+                            </td>
+                        </tr>
+                    </table>
 
+                </div>
+            </form>
+        </div>
+    </div>
 
-    <section class="rooms">
+    <section class="rooms mt-3">
         <div class="title text-center mt-5 mb-3 ">
             <h1 class="display-4">Our Rooms</h1>
             <hr class="w-50 mx-auto">
@@ -28,7 +52,7 @@ include 'header.php';
                         . "<img src='Admin-Zone/"
                         . $row['image'] . "' class='card-img-top' style='width: 100%; height:20rem;'
                             alt='...'>"
-                        . "<div style='position:static;'><p style='position:absolute;top:8px;right:8px;background-color:#deac46;border-radius:10px;color:white;padding:3px 6px;'> Available " . $row['quantity'] . " / " . $row['quantity'] . "</p></div>"
+                        . "<div style='position:static;'><p style='position:absolute;top:8px;right:8px;background-color:#deac46;border-radius:10px;color:white;padding:3px 6px;'> Quantity : " . $row['quantity'] . "</p></div>"
                         . "<div class='card-body mt-4 mb-3 text-center'>"
                         . "<h3 class='card-title'>" . $row['name'] . "</h3>
                             <p class='card-text'>"

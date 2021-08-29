@@ -120,3 +120,16 @@ function view_suites()
         return false;
     }
 }
+
+function min_price_room()
+{
+    $conn = db_connect();
+    $sql = "select min(price) from rooms";
+    $result = $conn->query($sql);
+    $conn->close();
+    if ($result->num_rows) {
+        return $result;
+    } else {
+        return false;
+    }
+}
