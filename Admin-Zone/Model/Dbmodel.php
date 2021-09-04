@@ -104,22 +104,6 @@ function view_rooms()
     }
 }
 
-function add_new_suite($suiteName, $target, $beds, $kitchen, $livingRoom, $washrooms, $peoples, $price)
-{
-    $conn = db_connect();
-    $stmt = $conn->prepare("INSERT INTO suites(name, image, bed, kitchen, living_room, washroom, people, price) values(?,?,?,?,?,?,?,?)");
-    $stmt->bind_param('ssssssss', $suiteName, $target, $beds, $kitchen, $livingRoom, $washrooms, $peoples, $price);
-    $result = $stmt->execute();
-    if ($result) {
-        $stmt->close();
-        $conn->close();
-        return $result;
-    } else {
-        $stmt->close();
-        $conn->close();
-        return false;
-    }
-}
 
 function view_suites()
 {

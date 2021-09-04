@@ -152,16 +152,16 @@ include 'header.php';
                         <div class="au-num">
                             <span class="counter">
                                 <?php
-                                $count = countItem('suites');
+                                $count = countItem('rooms');
                                 echo $count;
                                 ?>
                             </span>
                         </div>
                         <div class="au-text">
-                            <h3>Suites</h3>
+                            <h3>Rooms</h3>
                             <p>From
                                 <?php
-                                $min = minPrice('suites');
+                                $min = minPrice('rooms');
                                 echo $min;
                                 ?>
                             </p>

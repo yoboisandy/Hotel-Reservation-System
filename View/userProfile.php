@@ -13,8 +13,7 @@
                             <h2 class="font-weight-bold mt-5"><?= $user_data['u_fname'] ?>
                                 <?= $user_data['u_lname'] ?></h2>
                             <p><?= $user_data['u_address'] ?></p>
-                            <a href="<?= $base_url ?>?r=edituser&id=<?php echo $id ?>" class="text-white "><i
-                                    class="far fa-edit fa-2x mb-5"></i></a>
+                            <a href="<?= $base_url ?>?r=edituser&id=<?php echo $id ?>" class="text-white "><i class="far fa-edit fa-2x mb-5"></i></a>
                         </div>
                     </div>
                     <div class="col bg-white rounded-right" style="border: 1px solid #deac46">
@@ -33,6 +32,10 @@
                             <div class="col-12 mt-4">
                                 <span class="fw-bold fs-5">Email : </span>
                                 <span class="text-muted"><?= $user_data['u_email'] ?></span>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <span class="fw-bold fs-5">Address : </span>
+                                <span class="text-muted"><?= $user_data['u_address'] ?></span>
                             </div>
                             <div class="col-12 my-4">
                                 <span class="fw-bold fs-5">Phone : </span>

@@ -46,32 +46,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center my-4">
-                <div class="card shadow mb-3" style="border:1px solid #deac46;min-width:250px">
-                    <div class="card-header" style="background-color: #deac46;color:white;">Total Suites</div>
-                    <div class="card-body text-dark">
-                        <h5 class="card-title text-center fs-2">
-                            <?php
-                            $count = countItem('suites');
-                            echo $count;
-                            ?>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center my-4">
-                <div class="card shadow mb-3" style="border:1px solid #deac46;min-width:250px">
-                    <div class="card-header" style="background-color: #deac46;color:white;">Total Reservations</div>
-                    <div class="card-body text-dark">
-                        <h5 class="card-title text-center fs-2">
-                            <?php
-                            $count = countItem('suites');
-                            echo $count;
-                            ?>
-                        </h5>
-                    </div>
-                </div>
-            </div>
 
 
         </div>

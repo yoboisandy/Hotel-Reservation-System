@@ -7,7 +7,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-lg-10 col-md-10 col-12">
                 <div class="row">
-                    <?php include 'flash.php'; ?>
+                    <?php include 'view/flash.php'; ?>
                     <div class="col-lg-4" style="background-color: #deac46">
                         <div class="text-center text-white">
                             <i class="fas fa-user-tie fa-7x mt-5"></i>
