@@ -55,17 +55,33 @@ if (isset($_GET['r'])) {
             include 'Controller/SignupController.php';
             break;
 
-        case 'userprofile':
-            $_SESSION['active_url'] = 'userprofile';
+        case 'userProfile':
+            $_SESSION['active_url'] = 'userProfile';
             include 'Controller/UserProfileController.php';
             break;
-        case 'edituser':
-            $_SESSION['active_url'] = 'edituser';
+        case 'editUser':
+            $_SESSION['active_url'] = 'editUser';
             include 'Controller/EditUserController.php';
             break;
         case 'booking':
             $_SESSION['active_url'] = 'booking';
             include 'Controller/BookingController.php';
+            break;
+        case 'editBooking':
+            $_SESSION['active_url'] = 'editBooking';
+            include 'Controller/EditBookingController.php';
+            break;
+        case 'reservation':
+            $_SESSION['active_url'] = 'reservation';
+            include 'Controller/ReservationController.php';
+            break;
+        case 'cancelBooking':
+            $_SESSION['active_url'] = 'cancelBooking';
+            include 'Controller/CancelBookingController.php';
+            break;
+        case 'checkAvailability':
+            $_SESSION['active_url'] = 'checkAvailability';
+            include 'Controller/CheckAvailabilityController.php';
             break;
 
         default:

@@ -84,11 +84,36 @@ function countItem($table)
 
     return $stmt->fetchColumn();
 }
+function countReservations()
+{
+    $pdo = pdo();
+    $stmt = $pdo->query("SELECT count(id) FROM reservations where status = 'checked out'");
+    $stmt->execute();
+
+    return $stmt->fetchColumn();
+}
 
 function totalRooms()
 {
     $pdo = pdo();
-    $stmt = $pdo->query("SELECT SUM(quantity) FROM rooms");
+    $stmt = $pdo->query("SELECT count(id) FROM rooms");
+    $stmt->execute();
+
+    return $stmt->fetchColumn();
+}
+
+function send_mail($to, $subject, $message)
+{
+    $header = "From: admin@risenshine.com \r\n";
+    $header .= "Content-type: text/html \r\n";
+    return mail($to, $subject, $message, $header);
+}
+
+
+function totalGuests()
+{
+    $pdo = pdo();
+    $stmt = $pdo->query("SELECT SUM(guests) FROM reservations where status = 'checked out'");
     $stmt->execute();
 
     return $stmt->fetchColumn();

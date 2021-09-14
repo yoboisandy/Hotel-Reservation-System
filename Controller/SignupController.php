@@ -46,9 +46,19 @@ try {
     $fname = filterText($_POST['txtFName']);
     $lname = filterText($_POST['txtLName']);
     $phone = filterText($_POST['txtPhone']);
+    $phone_regx = "/^[0-9]{10}$/";
+    if (!preg_match($phone_regx, $phone)) {
+        $error['body'] = 'Phone number must contain 10 digit of number';
+        $error['title'] = 'Danger!';
+        $error['type'] = 'danger';
+        setFlash('message', $error);
+        include 'view/signup.php';
+        return;
+    }
+
     $address = filterText($_POST['txtAddress']);
     $password = md5($password_check);
-    $user = signup_new_user($fname, $lname, $email, $phone, $address, $password,/*  $confirmpassword, */ time());
+    $user = signup_new_user($fname, $lname, $email, $phone, $address, $password,/*  $confirmpassword, */ date("Y-m-d", time()));
     if ($user) {
         $msg['title'] = 'Success!!';
         $msg['body'] = "You have successfully signup.";

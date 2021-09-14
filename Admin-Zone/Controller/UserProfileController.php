@@ -1,4 +1,4 @@
-<?php include 'Model/Dbmodel.php'; 
+<?php include 'Model/Dbmodel.php';
 
 
 $id = $_GET['id'];
@@ -10,11 +10,11 @@ $user_data = where('user_tb', 'u_id', '=', $_GET['id']);
 
 if (empty($user_data)) {
     echo ('No User Data Found!');
+    // header("Location: ?r=usermanage");
     die;
 }
 
 
 
 
-include 'View/userProfile.php'
-?>
+include 'View/userProfile.php';

@@ -20,7 +20,6 @@ include "header.php";
                             <th>Beds</th>
                             <th>Washroom</th>
                             <th>People</th>
-                            <th>Quantity</th>
                             <th>Price</th>
                             <th>Action </th>
                         </tr>
@@ -40,11 +39,9 @@ include "header.php";
                 <td>" . $row["washroom"] .
                                 "</td>
                 <td>" . $row["people"] .
-                                "</td>
-                <td>" . $row["quantity"] .
-                                "</td>
-                <td>" . $row["price"] .
-                                "</td>
+                                " Peoples</td>
+                <td>RS. " . $row["price"] .
+                                " / PER DAY</td>
                 <td class='text-center'><a class='user-edit' href='" . $base_url .
                                 "?r=editRoom&id=" . $row["id"] .
                                 "'><i class='fas fa-edit'></i> </a> <a class='user-delete' href='" . $base_url .

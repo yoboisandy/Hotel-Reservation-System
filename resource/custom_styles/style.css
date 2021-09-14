@@ -74,6 +74,7 @@ section {
   text-transform: uppercase;
   text-decoration: none;
   padding: 8px;
+  transition: 0.3s;
 }
 
 .custom#custom:hover,
@@ -143,7 +144,9 @@ section {
   display: flex;
   justify-content: center;
 }
-
+.service-caption {
+  transition: 0.3s;
+}
 .service-caption:hover {
   color: #deac46;
   font-weight: bold;
@@ -197,6 +200,7 @@ footer {
   color: #deac46;
   font-size: 30px;
   letter-spacing: 3px;
+  transition: 0.3s;
 }
 
 .segment-one h4 a:hover {
@@ -219,12 +223,17 @@ footer li {
   margin-bottom: 10px;
 }
 
+.segment-two a,
+.segment-three a,
+.segment-four a {
+  transition: all 0.3s linear;
+}
+
 .segment-two a:hover,
 .segment-three a:hover,
 .segment-four a:hover {
   color: #deac46;
   margin-left: 10px;
-  transition: all 0.5s ease;
 }
 
 .segment-one .links a i {

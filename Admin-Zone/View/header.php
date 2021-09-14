@@ -15,6 +15,11 @@ if ($_SESSION['user']['type'] != 1) {
     <link rel="stylesheet" href="resource\font awesome\css\all.min.css" type="text/css" />
     <title>Rise-n-Shine | Admin-Panel</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+        #content {
+            margin-left: 250px;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,6 +33,9 @@ if ($_SESSION['user']['type'] != 1) {
 
             <div>
                 <ul class="nav navbar-nav flex-row ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $base_url ?>?r=home">Home</a>
+                    </li>
                     <?php
                     if (!empty($_SESSION['user']['login'])) { ?>
                         <li class="nav-item">
@@ -45,16 +53,16 @@ if ($_SESSION['user']['type'] != 1) {
 
     <div class="row">
         <div>
-            <div id="mySidenav" class="sidenav shadow-lg" style="width: 250px;">
+            <div id="mySidenav" class="sidenav " style="width: 250px;display:block">
                 <span class="close d-flex align-items-center justify-content-end">
                     <h4 style="padding-right:56px;color:#deac46;">Dashboard</h4>
                     <a href="javascript:void(0)" style="font-size: 30px; padding: 10px" onclick="closeNav()">&times;</a>
                 </span>
                 <a href="<?= $base_url ?>?r=home" onclick='closeNav()'>Home</a>
                 <a href="<?= $base_url ?>?r=accommodationManage" onclick='closeNav()'>Accomodations</a>
-                <a href="<?= $base_url ?>?r=contact" onclick='closeNav()'>Contact</a>
+                <a href="<?= $base_url ?>?r=contact" onclick='closeNav()'>Feedbacks</a>
                 <a href="<?= $base_url ?>?r=userManage" onclick='closeNav()'>Users</a>
-                <a href="#" onclick='closeNav()'>Reservations</a>
+                <a href="<?= $base_url ?>?r=reservations" onclick='closeNav()'>Reservations</a>
 
             </div>
         </div>

@@ -21,7 +21,7 @@ function signup_new_user($fname, $lname, $email, $phone, $address, $password, $c
 {
     $conn = db_connect();
     $stmt = $conn->prepare("INSERT INTO user_tb(u_fname, u_lname, u_email,u_phone,u_address,u_password,u_created_date) values(?,?,?,?, ?,?,?)");
-    $stmt->bind_param('ssssssi', $fname, $lname, $email, $phone, $address, $password, $created_date);
+    $stmt->bind_param('sssssss', $fname, $lname, $email, $phone, $address, $password, $created_date);
     $result = $stmt->execute();
     if ($result) {
         $stmt->close();
@@ -97,7 +97,7 @@ function contactus($name, $email, $phone, $message)
 function view_rooms()
 {
     $conn = db_connect();
-    $sql = "select * from rooms";
+    $sql = "select * from rooms order by id desc";
     $result = $conn->query($sql);
     $conn->close();
     if ($result->num_rows > 0) {
@@ -108,10 +108,26 @@ function view_rooms()
 }
 
 
-function view_suites()
+function insert_reservation($room_id, $user_id, $guests, $checkin, $checkout)
 {
     $conn = db_connect();
-    $sql = "select * from suites";
+    $stmt = $conn->prepare("INSERT INTO reservations(room_id,user_id,guests, checkin,checkout) values(?,?,?,?,?)");
+    $stmt->bind_param('iisss', $room_id, $user_id, $guests, $checkin, $checkout);
+    $result = $stmt->execute();
+    if ($result) {
+        $stmt->close();
+        $conn->close();
+        return $result;
+    } else {
+        $stmt->close();
+        $conn->close();
+        return false;
+    }
+}
+function view_reservations()
+{
+    $conn = db_connect();
+    $sql = "select * from reservations order by id desc";
     $result = $conn->query($sql);
     $conn->close();
     if ($result->num_rows > 0) {
@@ -119,4 +135,12 @@ function view_suites()
     } else {
         return false;
     }
+}
+
+
+function timeformat($time = "")
+{
+    if (empty($time)) $time = time();
+
+    return date("Y-m-d", $time) . "T" . date("h:i", $time);
 }

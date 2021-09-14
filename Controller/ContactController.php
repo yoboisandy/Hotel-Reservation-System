@@ -22,7 +22,12 @@ try {
 
     $result = contactus($name, $email, $phone, $message);
     if ($result) {
-        redirect('home');
+        $msg['title'] = 'Success!!';
+        $msg['body'] = "Your message has been successfully sent.";
+        $msg['type'] = 'success';
+        setFlash('message', $msg);
+        header("location:" . $base_url . "?r=booking");
+        redirect('contact');
         return;
     } else {
         $error['body'] = 'unable to add your detail try again please';

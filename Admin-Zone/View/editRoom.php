@@ -21,7 +21,15 @@
                         <label class="offset-lg-1 col-lg-3 col-5" for="fileToUpload">Room Image</label>
                         <div class="col-lg-8 col-7">
                             <input name="fileToUpload" id="fileToUpload" type="file" style="border-color:#d76149;" class="form-control" aria-label="name" aria-describedby="basic-addon1">
+
+                            <br>
+
+                            <div class="mb-2">
+                                Current: <img src="<?php echo $room_data['image']; ?>" height="50px" alt="" srcset="">
+                            </div>
                         </div>
+
+
                     </div>
 
                     <div class="input-group  my-4">
@@ -42,13 +50,6 @@
                         <label class="offset-lg-1 col-lg-3 col-5" for="People">People</label>
                         <div class="col-lg-8  col-7">
                             <input name="txtPeople" type="text" style="border-color:#d76149;" class="form-control" aria-label="email" aria-describedby="basic-addon1" value="<?php echo $room_data['people']; ?>">
-                        </div>
-                    </div>
-
-                    <div class="input-group  my-4">
-                        <label class="offset-lg-1 col-lg-3 col-5" for="Quantity">Quantity</label>
-                        <div class="col-lg-8  col-7">
-                            <input name="txtQuantity" type="number" style="border-color:#d76149;" class="form-control" value="<?php echo $room_data['quantity']; ?>" aria-label="email" aria-describedby="basic-addon1">
                         </div>
                     </div>
 

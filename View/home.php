@@ -5,12 +5,9 @@ include 'header.php';
     <!-- carousel Starts -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active">
@@ -38,13 +35,11 @@ include 'header.php';
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="prev">
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-            data-bs-slide="next">
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
@@ -75,7 +70,7 @@ include 'header.php';
             <div class="desc-links col-6   text-center ">
                 <a href="#"><i class="fas fa-phone"></i></i>&emsp; Call Now</a>
             </div>
-            <div class="desc-links col-6   text-center">
+            <div class="desc-links col-6   text-center" id="services">
                 <a href="#"><i class="far fa-calendar-alt"></i>&emsp; Book Now</a>
             </div>
         </div>
@@ -85,7 +80,7 @@ include 'header.php';
 
 
     <!-- Services Starts -->
-    <section class="my-5">
+    <section class="my-2">
         <div class="text-center">
             <h1 class="display-4 ">Services</h1>
             <hr class="w-25 mx-auto" />
@@ -246,8 +241,7 @@ include 'header.php';
                 <div class=" d-flex justify-content-center col-lg-3 col-md-6 col-12 my-3">
                     <div class=" card" style="width: 20rem">
                         <!-- <div class="card-header"></div> -->
-                        <img src="images\testimonials\nirmal.jpg" class="card-img-top img-fluid mx-auto my-2"
-                            alt="..." />
+                        <img src="images\testimonials\nirmal.jpg" class="card-img-top img-fluid mx-auto my-2" alt="..." />
                         <div class="card-body text-center">
                             <p class="card-text">
                                 I have to recognize your outstanding hospitality and service that I receive on a daily
@@ -277,10 +271,7 @@ include 'header.php';
             <h1 class="display-4">Locate Us</h1>
             <hr class="w-25 mx-auto" />
         </div>
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28119.421372176363!2d84.16088583128287!3d27.560512141188337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2432d71cbec82735!2sGolaghat%20Wildlife%20Resort!5e1!3m2!1sen!2snp!4v1613490458055!5m2!1sen!2snp"
-            width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
-            tabindex="0"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28119.421372176363!2d84.16088583128287!3d27.560512141188337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2432d71cbec82735!2sGolaghat%20Wildlife%20Resort!5e1!3m2!1sen!2snp!4v1613490458055!5m2!1sen!2snp" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
     </section>
     <!-- Google Map Ends -->
 </section>

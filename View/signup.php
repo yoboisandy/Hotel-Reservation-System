@@ -57,12 +57,7 @@
                                 aria-describedby="basic-addon1">
                         </div>
                     </div> -->
-                        <div class="input-group">
-                            <label class="offset-lg-1 col-lg-3 col-5" for=""></label>
-                            <div class="check mb-4"><input type="checkbox" name="checkT&C">
-                                <span>Agree to all the Terms & Condition</span>
-                            </div>
-                        </div>
+
 
                         <div class="input-group mb-3 justify-content-center">
                             <input type="submit" name="btnSignUp" value="sign up" class="w-25 form-button" />

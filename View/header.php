@@ -39,30 +39,7 @@
                         <li class="nav-item">
                             <a class="nav-link <?php echo $_SESSION['active_url'] == 'contact' ? 'active' : '' ?>" href="<?php echo $base_url ?>?r=contact">Contact</a>
                         </li>
-                        <!-- 
-                        <?php
-                        if (!empty($_SESSION['user']['login'])) { ?>
-                        <li class="nav-item">
-                            <a class="nav-link <?php echo $_SESSION['active_url'] == 'userprofile' ? 'active' : '' ?>"
-                                href="<?= $base_url ?>?r=userprofile&id=<?php echo $_SESSION['user']['user_id'] ?>">
-                                <?php echo $_SESSION['user']['user_name'] ?></a>
-                        </li>
-                        <?php
-                            if (($_SESSION['user']['type']) == 1) { ?>
-                        <li class="nav-item">
-                            <a class="nav-link " href="<?php echo $base_url ?>/Admin-Zone">
-                                Admin Panel</a>
-                        </li>
-                        <?php } ?>
-                        <li class="nav-item"><a href="<?= $base_url ?>?r=logout" id="custom" class="custom">Logout</a>
-                        </li>
-                        <?php  } else {
-                        ?>
-                        <li class="nav-item">
-                            <a class="custom <?php echo $_SESSION['active_url'] == 'login' ? 'active' : '' ?>"
-                                id="custom" href="<?php echo $base_url ?>?r=login">Login/Register</a>
-                            <?php } ?>
-                        </li> -->
+
                         <?php
                         if (!empty($_SESSION['user']['login'])) {
                         ?>
@@ -71,13 +48,13 @@
                                     <?= $_SESSION['user']['user_name']; ?>
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=userprofile&id=<?php echo $_SESSION['user']['user_id'] ?>">Profile</a></li>
+                                    <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=booking">Bookings</a></li>
                                     <?php
                                     if ($_SESSION['user']['type'] == 1) {
                                     ?>
                                         <li><a class="dropdown-item nav-link" href="<?php echo $base_url ?>/Admin-Zone">Admin Panel</a></li>
                                     <?php } else { ?>
-                                        <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=booking">Bookings</a></li>
+                                        <li><a class="dropdown-item nav-link" href="<?= $base_url ?>?r=userProfile&id=<?php echo $_SESSION['user']['user_id'] ?>">Profile</a></li>
                                     <?php } ?>
                                     <li>
                                         <hr class="dropdown-divider">

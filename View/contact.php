@@ -11,6 +11,7 @@ include 'header.php';
                 <h1>Contact Us</h1>
             </div>
         </div>
+
         <div class="title text-center mt-5 ">
             <h1 class="display-4">Get in Touch</h1>
             <hr class="w-50 mx-auto">
@@ -19,6 +20,7 @@ include 'header.php';
         <div class="row contact-area">
 
             <div class="row d-flex justify-content-center mt-3">
+
                 <div class="col-9"><?php include "View/flash.php"; ?></div>
             </div>
             <div class="col-lg-8 col-md-12 contact-form">

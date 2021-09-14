@@ -7,7 +7,7 @@ if (empty($_POST)) {
 }
 
 try {
-    $flag = empty($_POST['txtRoomName']) || empty($_POST['txtBed']) || empty($_POST['txtWashroom']) || empty($_POST['txtQuantity']) || empty($_POST['txtPeople'])  || empty($_POST['txtPrice']);
+    $flag = empty($_POST['txtRoomName']) || empty($_POST['txtBed']) || empty($_POST['txtWashroom']) ||  empty($_POST['txtPeople'])  || empty($_POST['txtPrice']);
     // check user input data
     if ($flag) {
         $error['body'] = 'All input field are required.';
@@ -29,7 +29,6 @@ try {
 
     $peoples = filterText($_POST['txtPeople']);
     $price = filterText($_POST['txtPrice']);
-    $quantity = $_POST['txtQuantity'];
     $target = "";
     if (!empty($_FILES["fileToUpload"]) && $_FILES["fileToUpload"]["error"] == 0) {
         $target = "images/uploaded/" . basename($_FILES['fileToUpload']['name']);
@@ -38,7 +37,7 @@ try {
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'], $target);
     }
 
-    $room = add_new_room($roomName, $target, $beds, $washrooms, $peoples, $quantity, $price);
+    $room = add_new_room($roomName, $target, $beds, $washrooms, $peoples, $price);
     if ($room) {
         $msg['title'] = 'Success!!';
         $msg['body'] = "You have successfully Added Room.";

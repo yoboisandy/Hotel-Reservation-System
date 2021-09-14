@@ -3,8 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-12 segment-one my-3 ml-2">
-                    <h4><a class="<?php echo $_SESSION['active_url'] == 'home' ?>"
-                            href="<?php echo $base_url ?>?r=home">Rise-n-Shine</a></h4>
+                    <h4><a class="<?php echo $_SESSION['active_url'] == 'home' ?>" href="<?php echo $base_url ?>?r=home">Rise-n-Shine</a></h4>
                     <p>
                     <h5 class="mt-0">Follow Us</h5>
                     <div class="links">
@@ -19,11 +18,11 @@
                     <h3>Quick Links</h3>
                     <p>
                     <ul>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Rooms</a></li>
-                        <li><a href="#">Gallery</a></li>
-                        <li><a href="#">Booking</a></li>
+                        <li><a href="<?= $base_url ?>?r=about">About</a></li>
+                        <li><a href="<?= $base_url ?>?r=home#services">Services</a></li>
+                        <li><a href="<?= $base_url ?>?r=accommodations">Rooms</a></li>
+                        <!-- <li><a href="#">Gallery</a></li> -->
+                        <li><a href="<?= $base_url ?>?r=booking-form">Booking</a></li>
                     </ul>
                     </p>
                 </div>

@@ -36,8 +36,19 @@ $u_address = request('txtAddress');
 $u_password_check = request('txtPassword');
 $u_type = request('txtUserType');
 
+$phone_regx = "/^[0-9]{10}$/";
 
-if (empty($u_fname) || empty($u_lname) || empty($u_email)) {
+if (!preg_match($phone_regx, $u_phone)) {
+    $error['body'] = 'Phone number must contain 10 digit of number';
+    $error['title'] = 'Danger!';
+    $error['type'] = 'danger';
+    setFlash('message', $error);
+    header("location:$base_url?r=editUser&id=$id");
+    return;
+}
+
+
+if (empty($u_fname) || empty($u_lname) || empty($u_email) || empty($u_phone) || empty($u_address)) {
     $error['body'] = 'All input field are required.';
     $error['title'] = 'Danger!!';
     $error['type'] = 'danger';
@@ -45,17 +56,24 @@ if (empty($u_fname) || empty($u_lname) || empty($u_email)) {
     return;
 }
 
-if (strlen($u_password_check) < 8) {
-    $error['body'] = 'Password must contain atleast 8 characters';
-    $error['title'] = 'Danger!';
-    $error['type'] = 'danger';
-    setFlash('message', $error);
-    include 'view/editUser.php';
-    return;
+
+if ($u_password_check == "") {
+    $data = compact('u_fname', 'u_lname', 'u_email', 'u_phone', 'u_address', 'u_type');
+} else {
+    if (strlen($u_password_check) < 8) {
+        $error['body'] = 'Password must contain atleast 8 characters';
+        $error['title'] = 'Danger!';
+        $error['type'] = 'danger';
+        setFlash('message', $error);
+        header("location:$base_url?r=editUser&id=$id");
+        return;
+    }
+
+    $u_password = md5($u_password_check);
+    $data = compact('u_fname', 'u_lname', 'u_email', 'u_phone', 'u_address', 'u_password', 'u_type');
 }
 
-$u_password = md5($u_password_check);
-$data = compact('u_fname', 'u_lname', 'u_email', 'u_phone', 'u_address', 'u_password', 'u_type');
+
 
 
 update('user_tb', 'u_id', $_GET['id'], $data);

@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 
-<section style="margin:100px">
+<section id="content" style="margin-top: 100px;">
     <div class="container mt-5">
 
 

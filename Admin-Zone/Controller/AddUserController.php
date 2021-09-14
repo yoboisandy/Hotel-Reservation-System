@@ -48,7 +48,20 @@ try {
     $address = filterText($_POST['txtAddress']);
     $password = md5($password_check);
 
-    $user = add_new_user($fname, $lname, $email, $phone, $address, $password, time(), $user_type);
+    $phone_regx = "/^[0-9]{10}$/";
+
+    if (!preg_match($phone_regx, $phone)) {
+        $error['body'] = 'Phone number must contain 10 digit of number';
+        $error['title'] = 'Danger!';
+        $error['type'] = 'danger';
+        setFlash('message', $error);
+        include 'view/addUser.php';
+        return;
+    }
+
+    $user = add_new_user($fname, $lname, $email, $phone, $address, $password, date("Y-m-d", time()), $user_type);
+    send_mail($email, "you are added as an admin", "you are added as an admin in rise n shine resort");
+
     if ($user) {
         $msg['title'] = 'Success!!';
         $msg['body'] = "You have successfully Added Admin.";

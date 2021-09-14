@@ -45,17 +45,10 @@
                         </div>
                     </div>
 
-                    <div class="input-group  my-4">
-                        <label class="offset-lg-1 col-lg-3 col-5" for="Quantity">Quantity</label>
-                        <div class="col-lg-8  col-7">
-                            <input name="txtQuantity" type="number" style="border-color:#d76149;" class="form-control" placeholder="No. of rooms..." aria-label="email" aria-describedby="basic-addon1">
-                        </div>
-                    </div>
-
                     <div class="input-group mb-3">
                         <label class="offset-lg-1 col-lg-3 col-5" for="price">Price</label>
                         <div class="col-lg-8 col-7">
-                            <input name="txtPrice" type="text" style="border-color:#d76149;" class="form-control" placeholder="Price Per Night..." aria-label="address" aria-describedby="basic-addon1">
+                            <input name="txtPrice" type="text" style="border-color:#d76149;" class="form-control" placeholder="Price PER DAY..." aria-label="address" aria-describedby="basic-addon1">
                         </div>
                     </div>
 

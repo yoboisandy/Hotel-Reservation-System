@@ -120,6 +120,23 @@ include 'header.php';
                         <div class="au-num">
                             <span class="counter">
                                 <?php
+                                $count = countReservations();
+                                echo $count ?? 0;
+                                ?>
+                            </span>
+                        </div>
+                        <div class="au-text">
+                            <h3>Reservations</h3>
+                            <p>Till Now </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 my-3">
+                    <div class="au-item">
+                        <div class="au-num">
+                            <span class="counter">
+                                <?php
                                 $count = totalRooms();
                                 echo $count;
                                 ?>
@@ -130,20 +147,9 @@ include 'header.php';
                             <p>From
                                 <?php
                                 $min = minPrice('rooms');
-                                echo $min;
+                                echo "Rs. " . $min . " PER DAY";
                                 ?>
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 my-3">
-                    <div class="au-item">
-                        <div class="au-num">
-                            <span class="counter">13k</span>
-                        </div>
-                        <div class="au-text">
-                            <h3>Happy Clients</h3>
-                            <p>all year long</p>
                         </div>
                     </div>
                 </div>
@@ -152,19 +158,14 @@ include 'header.php';
                         <div class="au-num">
                             <span class="counter">
                                 <?php
-                                $count = countItem('rooms');
-                                echo $count;
+                                $min = totalGuests();
+                                echo $min ?? 0;
                                 ?>
                             </span>
                         </div>
                         <div class="au-text">
-                            <h3>Rooms</h3>
-                            <p>From
-                                <?php
-                                $min = minPrice('rooms');
-                                echo $min;
-                                ?>
-                            </p>
+                            <h3>Happy Guests</h3>
+                            <p>Till Now</p>
                         </div>
                     </div>
                 </div>
